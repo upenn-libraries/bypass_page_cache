@@ -28,7 +28,7 @@ direct_write() {
       if [ "$1" = "-" ]; then
         direct_write
       else
-        dd bs=1M of="$1" oflag=direct iflag=fullblock
+        dd bs=1M of="$1" conv=fdatasync oflag=direct iflag=fullblock
       fi
       ;;
     *)
